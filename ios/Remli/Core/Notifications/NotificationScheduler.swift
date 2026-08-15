@@ -364,7 +364,7 @@ final class NotificationScheduler: ObservableObject {
     ///
     /// ## Two audiences, one notification
     ///
-    /// A lock screen is a public surface, and "Metformin 500 mg — Columbia Primary Care" announces
+    /// A lock screen is a public surface, and "Metformin 500 mg — Remli Demo Primary Care" announces
     /// a diagnosis and a care relationship to whoever is nearby, several times a day. But a
     /// notification that says nothing cannot be acted on without unlocking, which is most of its
     /// value gone.

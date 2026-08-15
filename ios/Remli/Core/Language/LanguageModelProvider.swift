@@ -36,7 +36,7 @@ enum ScriptedReason: Equatable {
             return LiteRTRuntime.missingPackageExplanation
         case .modelFileMissing:
             return "Gemma's weights are not on this phone yet, so narration is scripted. "
-                + "Download them in Settings to turn on on-device Gemma."
+                + "Open Privacy & Settings from the shield button to download them."
         case .modelFileDownloading(let progress):
             let percent = progress >= 0 ? " (\(Int(progress * 100))%)" : ""
             return "Gemma's weights are still downloading\(percent). Narration is scripted until that finishes."

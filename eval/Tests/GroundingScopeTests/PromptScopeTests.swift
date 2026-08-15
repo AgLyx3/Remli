@@ -62,7 +62,7 @@ final class PromptScopeTests: XCTestCase {
             id: "prop-a",
             title: "Lisinopril",
             dose: "Take 1 tablet (10 mg) by mouth once daily.",
-            sourceLabel: "Columbia Primary Care",
+            sourceLabel: "Remli Demo Primary Care",
             hour: 8,
             slotLabel: "Morning"
         )
@@ -73,7 +73,7 @@ final class PromptScopeTests: XCTestCase {
             id: "prop-b",
             title: "Warfarin",
             dose: "Take 3 mg by mouth at 7 PM.",
-            sourceLabel: "Mount Auburn Hospital",
+            sourceLabel: "Remli Demo Hospital",
             hour: 19,
             slotLabel: "Evening"
         )
@@ -86,7 +86,7 @@ final class PromptScopeTests: XCTestCase {
         let haystack = promptB.userMessage + "\n" + promptB.grounding.corpus
 
         // Tokens unique to proposal A. If any appears, the builder reached beyond its argument.
-        for leak in ["Lisinopril", "Columbia Primary Care", "10 mg", "prop-a"] {
+        for leak in ["Lisinopril", "Remli Demo Primary Care", "10 mg", "prop-a"] {
             XCTAssertFalse(
                 haystack.contains(leak),
                 """
@@ -101,7 +101,7 @@ final class PromptScopeTests: XCTestCase {
         // And the prompt does contain its own facts, so the assertion above is not passing merely
         // because the prompt is empty.
         XCTAssertTrue(haystack.contains("Warfarin"), "Prompt for B is missing B's own name")
-        XCTAssertTrue(haystack.contains("Mount Auburn Hospital"), "Prompt for B is missing B's own source")
+        XCTAssertTrue(haystack.contains("Remli Demo Hospital"), "Prompt for B is missing B's own source")
     }
 
     /// The guard's view of the world must be scoped the same way the prompt is.
@@ -137,7 +137,7 @@ final class PromptScopeTests: XCTestCase {
         )
         let haystack = prompt.userMessage + "\n" + prompt.grounding.corpus
 
-        for leak in ["Lisinopril", "Columbia Primary Care"] {
+        for leak in ["Lisinopril", "Remli Demo Primary Care"] {
             XCTAssertFalse(
                 haystack.contains(leak),
                 "Follow-up about proposal B leaked \"\(leak)\" from proposal A."
@@ -161,7 +161,7 @@ final class PromptScopeTests: XCTestCase {
     /// that is never told what is missing will fill it in."
     func testMissingTimeIsStatedExplicitly() {
         let citation = SourceCitation(
-            sourceLabel: "Columbia Primary Care",
+            sourceLabel: "Remli Demo Primary Care",
             resourceType: "MedicationRequest",
             resourceID: "prop-c",
             fieldPath: "dosageInstruction[0].text",
@@ -184,7 +184,7 @@ final class PromptScopeTests: XCTestCase {
             ],
             flags: [],
             primaryProvenance: .needsReview(.timeOfDayNotSpecified),
-            sourceLabel: "Columbia Primary Care",
+            sourceLabel: "Remli Demo Primary Care",
             dataOrigin: .authoredDemo,
             schedulingDeclinedReason: nil
         )

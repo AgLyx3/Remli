@@ -90,7 +90,9 @@ struct PortalScreen: View {
             icon: "info.circle",
             title: "What I do and don't do",
             message: "I turn what's already written in your records into reminders, and I show you "
-                + "where each one came from. I don't diagnose anything or tell you what to take.",
+                + "where each one came from. I don't provide medical advice. Check with your doctor "
+                + "or pharmacist before starting, stopping, or changing medication, therapy, diet, "
+                + "or any care plan.",
             tint: RemliTheme.Palette.tertiary,
             background: RemliTheme.Palette.tertiaryContainer.opacity(0.35)
         )

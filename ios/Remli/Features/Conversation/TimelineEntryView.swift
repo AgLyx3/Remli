@@ -37,9 +37,6 @@ struct TimelineEntryView: View {
         case .scheduled(let reminder):
             ScheduledCard(reminder: reminder)
 
-        case .photoDraft(let draft):
-            PhotoDraftCard(draft: draft)
-
         case .note(let text):
             NoteRow(text: text)
 
@@ -216,66 +213,6 @@ private struct ScheduledCard: View {
         }
         .padding(14)
         .background(RemliTheme.Palette.secondaryContainer, in: RoundedRectangle(cornerRadius: 14))
-    }
-}
-
-// MARK: - Photo draft
-
-/// The medication-label photo affordance.
-///
-/// v1 is explicit that this is a *concept demo*: no OCR runs, nothing is extracted from the
-/// image, and no reminder can be created from it. The card says so on its face rather than in
-/// a footnote, because a card that looks like it read your bottle when it didn't is exactly the
-/// kind of thing that erodes trust.
-private struct PhotoDraftCard: View {
-    let draft: PhotoDraft
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: RemliTheme.Metric.md) {
-            HStack {
-                Text("DRAFT FROM PHOTO")
-                    .font(RemliTheme.Typeface.labelSmall())
-                    .kerning(0.8)
-                    .foregroundStyle(RemliTheme.Palette.onSurfaceMuted)
-                Spacer()
-                Text("Demo")
-                    .font(RemliTheme.Typeface.labelSmall())
-                    .foregroundStyle(RemliTheme.Palette.concern)
-                    .padding(.horizontal, 7)
-                    .padding(.vertical, 3)
-                    .background(RemliTheme.Palette.concernContainer, in: Capsule())
-            }
-
-            Text(draft.medicationName)
-                .font(RemliTheme.Typeface.titleLarge())
-                .foregroundStyle(RemliTheme.Palette.onSurface)
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text("INSTRUCTION FOUND")
-                    .font(RemliTheme.Typeface.labelSmall())
-                    .foregroundStyle(RemliTheme.Palette.onSurfaceMuted)
-                Text(draft.instructionFound)
-                    .font(RemliTheme.Typeface.verbatim())
-                    .foregroundStyle(RemliTheme.Palette.onSurface)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(12)
-            .background(RemliTheme.Palette.surfaceLow, in: RoundedRectangle(cornerRadius: 12))
-
-            Text("This is sample text, not a reading of your bottle. Remli does not extract "
-                 + "medication details from photos in this version. To set a reminder, enter the "
-                 + "details yourself and review them.")
-                .font(RemliTheme.Typeface.bodyMedium())
-                .foregroundStyle(RemliTheme.Palette.onSurfaceVariant)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .padding(RemliTheme.Metric.containerMargin)
-        .background(RemliTheme.Palette.surface, in: RoundedRectangle(cornerRadius: RemliTheme.Metric.radiusLarge))
-        .overlay {
-            RoundedRectangle(cornerRadius: RemliTheme.Metric.radiusLarge)
-                .stroke(RemliTheme.Palette.concern.opacity(0.3), style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
-        }
     }
 }
 

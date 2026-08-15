@@ -199,9 +199,6 @@
 				DEVELOPMENT_TEAM = 2R4NNF332Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Remli opens the camera so you can photograph a medication label. In this version the photo is a demo affordance and is not analyzed or uploaded.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Remli uses the microphone so you can speak to it instead of typing. Speech is transcribed on this device.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Remli transcribes your speech on this device so your health conversation never leaves your phone.";
 				INFOPLIST_FILE = "Remli-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -232,9 +229,6 @@
 				DEVELOPMENT_TEAM = 2R4NNF332Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Remli opens the camera so you can photograph a medication label. In this version the photo is a demo affordance and is not analyzed or uploaded.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Remli uses the microphone so you can speak to it instead of typing. Speech is transcribed on this device.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Remli transcribes your speech on this device so your health conversation never leaves your phone.";
 				INFOPLIST_FILE = "Remli-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

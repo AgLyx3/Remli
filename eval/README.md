@@ -220,7 +220,7 @@ on the phone, write JSON, then score on the Mac as many times as you like withou
     {
       "id": "introduce-lisinopril-run1",
       "facts": ["Kind: medication", "Name: Lisinopril", "..."],
-      "text": "Your record from Columbia Primary Care lists ...",
+      "text": "Your record from Remli Demo Primary Care lists ...",
       "guardDecision": "allowed",
       "guardRule": null,
       "ttftMs": 310,
@@ -267,8 +267,8 @@ substrings like `" record says"`, so:
 | Sentence | Verdict |
 |---|---|
 | "Your record says to take it with meals." | allowed |
-| "Your record **from Mount Auburn Hospital** says to take it with meals." | **rejected** |
-| "Your **Mount Auburn Hospital** record says to take it with meals." | **rejected** |
+| "Your record **from Remli Demo Hospital** says to take it with meals." | **rejected** |
+| "Your **Remli Demo Hospital** record says to take it with meals." | **rejected** |
 | "According to your record, take it with meals." | allowed |
 
 This matters because `GroundedPromptBuilder` emits `Source organization:` and its introduce task

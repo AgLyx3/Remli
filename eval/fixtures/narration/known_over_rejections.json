@@ -10,14 +10,14 @@
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily"
       ],
-      "candidate": "Your record from Mount Auburn Hospital says to take it with meals, twice daily.",
+      "candidate": "Your record from Remli Demo Hospital says to take it with meals, twice daily.",
       "expect": {
         "decision": "rejected",
         "rule": "unattributedAdministrationInstruction"
@@ -26,18 +26,18 @@
     },
     {
       "id": "known-attribution-broken-by-possessive-source",
-      "rationale": "FINDING A, second surface form. 'Your Mount Auburn Hospital record says ...' also breaks the contiguous match, for the same reason and with the same fix.",
+      "rationale": "FINDING A, second surface form. 'Your Remli Demo Hospital record says ...' also breaks the contiguous match, for the same reason and with the same fix.",
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily"
       ],
-      "candidate": "Your Mount Auburn Hospital record says to take it with meals, twice daily.",
+      "candidate": "Your Remli Demo Hospital record says to take it with meals, twice daily.",
       "expect": {
         "decision": "rejected",
         "rule": "unattributedAdministrationInstruction"
@@ -50,7 +50,7 @@
       "facts": [
         "Kind: medication",
         "Name: Lisinopril",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: From your record",
         "Number of reminder times per day: 1",
         "1 times a day",

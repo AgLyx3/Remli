@@ -16,7 +16,7 @@ import Foundation
 struct HealthSourceDescriptor: Codable, Hashable, Identifiable {
     /// Stable identifier. Used in proposal identity, so it must not change between imports.
     let id: String
-    /// e.g. "Columbia Primary Care".
+    /// e.g. "Remli Demo Primary Care".
     let displayName: String
     /// One line describing *how* Remli is connected, e.g. "Sample file bundled with the app".
     /// Shown under the source name so a demo audience can never mistake a file for a live chart.
@@ -196,7 +196,7 @@ extension SyntheaBundleConnector {
         SyntheaBundleConnector(
             source: HealthSourceDescriptor(
                 id: "sample.synthea.glover",
-                displayName: "Mount Auburn Hospital",
+                displayName: "Remli Demo Hospital",
                 subtitle: "Synthetic Synthea record bundled with the app",
                 dataOrigin: .syntheaSynthetic
             ),
@@ -211,7 +211,7 @@ extension SyntheaBundleConnector {
         SyntheaBundleConnector(
             source: HealthSourceDescriptor(
                 id: "sample.portal.export",
-                displayName: "Columbia Primary Care",
+                displayName: "Remli Demo Primary Care",
                 subtitle: "Sample portal export bundled with the app",
                 dataOrigin: .authoredDemo
             ),
