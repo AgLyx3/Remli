@@ -318,7 +318,7 @@ private struct ModelManagementSection: View {
 
     private func removeModel() {
         do {
-            try manager.deleteStagedModel()
+            try manager.deleteModel()
         } catch {
             operationError = error.localizedDescription
         }
@@ -326,7 +326,7 @@ private struct ModelManagementSection: View {
 }
 
 private struct SupportSection: View {
-    private let supportURL = URL(string: "https://github.com/AgLyx3/Nudgy/issues")!
+    private let supportURL = URL(string: "https://github.com/AgLyx3/Remli/issues")!
 
     var body: some View {
         Link(destination: supportURL) {
