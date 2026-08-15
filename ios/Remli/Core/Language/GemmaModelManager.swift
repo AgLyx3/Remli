@@ -243,10 +243,25 @@ final class GemmaModelManager: NSObject, ObservableObject {
     /// Deletes every known copy of the weights. Frees the storage and degrades to `ScriptedModel`.
     func deleteModel() throws {
         let candidates = [availability.readyURL, stagedURL, developerDropURL]
-        let modelURLs = Set(candidates.compactMap { $0?.standardizedFileURL })
+        let modelURLs = candidates.compactMap { $0 }
+
+        do {
+            try Self.removeExistingModelFiles(at: modelURLs, using: fileManager)
+        } catch {
+            _ = refresh()
+            throw error
+        }
+
+        UserDefaults.standard.removeObject(forKey: Self.pinnedSizeDefaultsKey)
+        clearResumeData()
+        setAvailability(.absent)
+    }
+
+    static func removeExistingModelFiles(at urls: [URL], using fileManager: FileManager) throws {
+        let uniqueURLs = Set(urls.map(\.standardizedFileURL))
         var firstError: Error?
 
-        for url in modelURLs where fileManager.fileExists(atPath: url.path) {
+        for url in uniqueURLs where fileManager.fileExists(atPath: url.path) {
             do {
                 try fileManager.removeItem(at: url)
             } catch {
@@ -254,14 +269,7 @@ final class GemmaModelManager: NSObject, ObservableObject {
             }
         }
 
-        if let firstError {
-            _ = refresh()
-            throw firstError
-        }
-
-        UserDefaults.standard.removeObject(forKey: Self.pinnedSizeDefaultsKey)
-        clearResumeData()
-        setAvailability(.absent)
+        if let firstError { throw firstError }
     }
 
     // MARK: - Validation and storage attributes
