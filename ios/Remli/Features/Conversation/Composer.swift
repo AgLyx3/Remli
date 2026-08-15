@@ -17,8 +17,6 @@ struct Composer: View {
 
     var onSend: (String) -> Void
     var onQuickAction: (QuickAction) -> Void
-    var onAddFromPhoto: () -> Void
-
 
     enum QuickAction: String, CaseIterable, Identifiable {
         case reviewReminders
@@ -71,13 +69,6 @@ struct Composer: View {
                     Button(action.title) { onQuickAction(action) }
                         .buttonStyle(QuietButtonStyle())
                 }
-
-                Button {
-                    onAddFromPhoto()
-                } label: {
-                    Label("Add from photo", systemImage: "camera")
-                }
-                .buttonStyle(QuietButtonStyle())
             }
             .padding(.horizontal, 1)
         }

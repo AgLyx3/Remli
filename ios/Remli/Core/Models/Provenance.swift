@@ -36,7 +36,7 @@ enum DataOrigin: String, Codable, Hashable {
 /// exactly how "twice daily with meals" quietly becomes "twice daily".
 struct SourceCitation: Codable, Hashable, Identifiable {
     let id: String
-    /// Human-readable origin, e.g. "Columbia Primary Care".
+    /// Human-readable origin, e.g. "Remli Demo Primary Care".
     let sourceLabel: String
     let resourceType: String
     let resourceID: String

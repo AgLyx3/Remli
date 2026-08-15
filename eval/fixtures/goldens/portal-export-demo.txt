@@ -1,5 +1,5 @@
 patient: Maya Reyes
-sources: Columbia Orthopedics | Columbia Primary Care | Columbia Rehabilitation Medicine | Riverside Endocrinology
+sources: Remli Demo Endocrinology | Remli Demo Orthopedics | Remli Demo Primary Care | Remli Demo Rehabilitation
 medications: 4
 therapyTasks: 4
 dietaryGuidance: 4
@@ -9,8 +9,8 @@ proposals: 11
 ── remli.proposal.medication.MedicationRequest/1f1c9f10-0000-4000-8000-00000000000a
    kind: medication
    title: Metformin hydrochloride 500 MG
-   subtitle: Columbia Primary Care · Sample data
-   source: Columbia Primary Care [authoredDemo]
+   subtitle: Remli Demo Primary Care · Sample data
+   source: Remli Demo Primary Care [authoredDemo]
    provenance: fromYourRecord(MedicationRequest)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false
@@ -27,8 +27,8 @@ proposals: 11
 ── remli.proposal.medication.MedicationRequest/1f1c9f10-0000-4000-8000-00000000000c
    kind: medication
    title: Levothyroxine Sodium 0.05 MG
-   subtitle: Columbia Primary Care · Sample data
-   source: Columbia Primary Care [authoredDemo]
+   subtitle: Remli Demo Primary Care · Sample data
+   source: Remli Demo Primary Care [authoredDemo]
    provenance: fromYourRecord(MedicationRequest)
    tier: needsYou
    needsTimeOfDay: true   asNeeded: false
@@ -42,8 +42,8 @@ proposals: 11
 ── remli.proposal.medication.MedicationRequest/1f1c9f10-0000-4000-8000-00000000000d
    kind: medication
    title: Ibuprofen 400 MG
-   subtitle: Columbia Orthopedics · Sample data
-   source: Columbia Orthopedics [authoredDemo]
+   subtitle: Remli Demo Orthopedics · Sample data
+   source: Remli Demo Orthopedics [authoredDemo]
    provenance: needsReview(asNeededMedication)
    tier: onDemand
    needsTimeOfDay: false   asNeeded: true
@@ -55,8 +55,8 @@ proposals: 11
 ── remli.proposal.medication.MedicationStatement/1f1c9f10-0000-4000-8000-00000000000b
    kind: medication
    title: Metformin hydrochloride 500 MG
-   subtitle: Riverside Endocrinology · Sample data
-   source: Riverside Endocrinology [authoredDemo]
+   subtitle: Remli Demo Endocrinology · Sample data
+   source: Remli Demo Endocrinology [authoredDemo]
    provenance: fromYourRecord(MedicationStatement)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false
@@ -73,7 +73,7 @@ proposals: 11
    kind: nutrition
    title: Breakfast — what your record says about food
    subtitle: Diabetic diet · avoid Grapefruit and grapefruit juice, Sugar-sweetened beverages · allergic to Peanut
-   source: Columbia Primary Care [authoredDemo]
+   source: Remli Demo Primary Care [authoredDemo]
    provenance: fromYourRecord(NutritionOrder)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -89,7 +89,7 @@ proposals: 11
    kind: nutrition
    title: Dinner — what your record says about food
    subtitle: Diabetic diet · avoid Grapefruit and grapefruit juice, Sugar-sweetened beverages · allergic to Peanut
-   source: Columbia Primary Care [authoredDemo]
+   source: Remli Demo Primary Care [authoredDemo]
    provenance: fromYourRecord(NutritionOrder)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -104,7 +104,7 @@ proposals: 11
    kind: nutrition
    title: Lunch — what your record says about food
    subtitle: Diabetic diet · avoid Grapefruit and grapefruit juice, Sugar-sweetened beverages · allergic to Peanut
-   source: Columbia Primary Care [authoredDemo]
+   source: Remli Demo Primary Care [authoredDemo]
    provenance: fromYourRecord(NutritionOrder)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -118,8 +118,8 @@ proposals: 11
 ── remli.proposal.therapy.CarePlan/1f1c9f10-0000-4000-8000-00000000001a#pendulum-swings
    kind: therapy
    title: Pendulum swings
-   subtitle: Right shoulder home exercise program · Columbia Rehabilitation Medicine · Sample data
-   source: Columbia Rehabilitation Medicine [authoredDemo]
+   subtitle: Right shoulder home exercise program · Remli Demo Rehabilitation · Sample data
+   source: Remli Demo Rehabilitation [authoredDemo]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -139,8 +139,8 @@ proposals: 11
 ── remli.proposal.therapy.CarePlan/1f1c9f10-0000-4000-8000-00000000001a#resistance-band-external-rotation
    kind: therapy
    title: Resistance band external rotation
-   subtitle: Right shoulder home exercise program · Columbia Rehabilitation Medicine · Sample data
-   source: Columbia Rehabilitation Medicine [authoredDemo]
+   subtitle: Right shoulder home exercise program · Remli Demo Rehabilitation · Sample data
+   source: Remli Demo Rehabilitation [authoredDemo]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -156,8 +156,8 @@ proposals: 11
 ── remli.proposal.therapy.CarePlan/1f1c9f10-0000-4000-8000-00000000001a#scapular-retraction
    kind: therapy
    title: Scapular retraction
-   subtitle: Right shoulder home exercise program · Columbia Rehabilitation Medicine · Sample data
-   source: Columbia Rehabilitation Medicine [authoredDemo]
+   subtitle: Right shoulder home exercise program · Remli Demo Rehabilitation · Sample data
+   source: Remli Demo Rehabilitation [authoredDemo]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -176,8 +176,8 @@ proposals: 11
 ── remli.proposal.therapy.CarePlan/1f1c9f10-0000-4000-8000-00000000001a#wall-slides
    kind: therapy
    title: Wall slides
-   subtitle: Right shoulder home exercise program · Columbia Rehabilitation Medicine · Sample data
-   source: Columbia Rehabilitation Medicine [authoredDemo]
+   subtitle: Right shoulder home exercise program · Remli Demo Rehabilitation · Sample data
+   source: Remli Demo Rehabilitation [authoredDemo]
    provenance: fromYourRecord(CarePlan)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false

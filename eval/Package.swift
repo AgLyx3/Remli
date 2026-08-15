@@ -74,5 +74,11 @@ let package = Package(
             dependencies: ["EvalKit", "RemliCore"],
             path: "Tests/NormalizerEvalTests"
         ),
+
+        .testTarget(
+            name: "ModelManagerTests",
+            dependencies: ["RemliCore"],
+            path: "Tests/ModelManagerTests"
+        ),
     ]
 )

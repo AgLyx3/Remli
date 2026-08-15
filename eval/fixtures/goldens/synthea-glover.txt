@@ -1,5 +1,5 @@
 patient: Terry Kent Glover
-sources: Dr. Gabriel Reilly | Dr. Kyoko Price | Dr. Synthia Keebler | Mount Auburn Hospital
+sources: Dr. Gabriel Reilly | Dr. Kyoko Price | Dr. Synthia Keebler | Remli Demo Hospital
 medications: 7
 therapyTasks: 3
 dietaryGuidance: 2
@@ -103,7 +103,7 @@ proposals: 13
    kind: nutrition
    title: Breakfast — what your record says about food
    subtitle: Diabetic diet (finding)
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -117,7 +117,7 @@ proposals: 13
    kind: nutrition
    title: Dinner — what your record says about food
    subtitle: Diabetic diet (finding)
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -130,7 +130,7 @@ proposals: 13
    kind: nutrition
    title: Lunch — what your record says about food
    subtitle: Diabetic diet (finding)
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: fromYourRecord(CarePlan)
    tier: ready
    needsTimeOfDay: false   asNeeded: false
@@ -143,8 +143,8 @@ proposals: 13
 ── remli.proposal.therapy.CarePlan/d20a36fc-23ba-8462-d823-d1164599d0dd#physical-therapy-procedure-regime-therapy
    kind: therapy
    title: Physical therapy procedure (regime/therapy)
-   subtitle: Therapy (regime/therapy) · Mount Auburn Hospital · Synthetic record
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   subtitle: Therapy (regime/therapy) · Remli Demo Hospital · Synthetic record
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: needsReview(frequencyNotSpecified)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false
@@ -157,8 +157,8 @@ proposals: 13
 ── remli.proposal.therapy.CarePlan/d20a36fc-23ba-8462-f0a8-62e87195d863#prescribed-activity-exercise-education-procedure
    kind: therapy
    title: Prescribed activity/exercise education (procedure)
-   subtitle: Lifestyle education regarding hypertension (procedure) · Mount Auburn Hospital · Synthetic record
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   subtitle: Lifestyle education regarding hypertension (procedure) · Remli Demo Hospital · Synthetic record
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: needsReview(frequencyNotSpecified)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false
@@ -171,8 +171,8 @@ proposals: 13
 ── remli.proposal.therapy.CarePlan/d20a36fc-23ba-8462-f684-199048a4bb6d#exercise-therapy-regime-therapy
    kind: therapy
    title: Exercise therapy (regime/therapy)
-   subtitle: Diabetes self management plan (record artifact) · Mount Auburn Hospital · Synthetic record
-   source: Mount Auburn Hospital [syntheaSynthetic]
+   subtitle: Diabetes self management plan (record artifact) · Remli Demo Hospital · Synthetic record
+   source: Remli Demo Hospital [syntheaSynthetic]
    provenance: needsReview(frequencyNotSpecified)
    tier: needsYou
    needsTimeOfDay: false   asNeeded: false

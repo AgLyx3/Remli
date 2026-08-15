@@ -9,9 +9,9 @@
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily"
@@ -26,14 +26,14 @@
       "facts": [
         "Kind: medication",
         "Name: Atorvastatin",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: Needs review",
         "Needs review because: the record does not say what time of day to take it",
         "Number of reminder times per day: 1",
         "1 times a day",
         "Reminder 1 of 1 - Dose 1 of 1: not stated in the record [Needs review]"
       ],
-      "candidate": "Your record from Columbia Primary Care does not say what time of day to take this. Would you like me to suggest a time?",
+      "candidate": "Your record from Remli Demo Primary Care does not say what time of day to take this. Would you like me to suggest a time?",
       "expect": { "decision": "allowed" },
       "tags": ["negation", "gaps"]
     },
@@ -43,7 +43,7 @@
       "facts": [
         "Kind: medication",
         "Name: Atorvastatin",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: Remli's suggestion",
         "Remli's convenience suggestion is based on: your other evening reminder",
         "Number of reminder times per day: 1",
@@ -60,9 +60,9 @@
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily",
@@ -70,7 +70,7 @@
         "Reminder 1 of 2 - Morning: 8:00 AM [From your record]",
         "Reminder 2 of 2 - Evening: 6:00 PM [From your record]"
       ],
-      "candidate": "Your record from Mount Auburn Hospital lists this twice a day. The first of 2 reminders would be at 8:00 AM and the second at 6:00 PM.",
+      "candidate": "Your record from Remli Demo Hospital lists this twice a day. The first of 2 reminders would be at 8:00 AM and the second at 6:00 PM.",
       "expect": { "decision": "allowed" },
       "tags": ["grounding", "innocuous-numbers"]
     },
@@ -80,7 +80,7 @@
       "facts": [
         "Kind: medication",
         "Name: Lisinopril",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: From your record",
         "Number of reminder times per day: 1",
         "1 times a day",
@@ -96,14 +96,14 @@
       "facts": [
         "Kind: medication",
         "Name: Amoxicillin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take 500 mg by mouth twice daily.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take 500 mg by mouth twice daily.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily"
       ],
-      "candidate": "Your record from Mount Auburn Hospital lists amoxicillin 500 mg, twice daily.",
+      "candidate": "Your record from Remli Demo Hospital lists amoxicillin 500 mg, twice daily.",
       "expect": { "decision": "allowed" },
       "tags": ["grounding", "quoting"]
     },
@@ -113,14 +113,14 @@
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily"
       ],
-      "candidate": "Your record from Mount Auburn Hospital lists this one twice a day, with meals.",
+      "candidate": "Your record from Remli Demo Hospital lists this one twice a day, with meals.",
       "expect": { "decision": "allowed" },
       "tags": ["grounding", "number-words"]
     },
@@ -130,15 +130,15 @@
       "facts": [
         "Kind: medication",
         "Name: Metformin",
-        "Source organization: Mount Auburn Hospital",
+        "Source organization: Remli Demo Hospital",
         "Rule category: From your record",
-        "Instruction (verbatim from Mount Auburn Hospital): \"Take by mouth twice daily with meals.\"",
+        "Instruction (verbatim from Remli Demo Hospital): \"Take by mouth twice daily with meals.\"",
         "Number of reminder times per day: 2",
         "2 times a day",
         "2 times daily",
         "The person asked: is 850 mg right?"
       ],
-      "candidate": "Your record from Mount Auburn Hospital does not mention 850 mg. Your care team or pharmacist can tell you more.",
+      "candidate": "Your record from Remli Demo Hospital does not mention 850 mg. Your care team or pharmacist can tell you more.",
       "expect": { "decision": "allowed" },
       "tags": ["negation", "follow-up", "gaps"]
     },
@@ -149,14 +149,14 @@
         "Kind: exercise",
         "Name: Ankle pumps",
         "Detail: 10 repetitions, 3 times a day",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: From your record",
-        "Instruction (verbatim from Columbia Primary Care): \"Ankle pumps, 10 reps, 3 times a day.\"",
+        "Instruction (verbatim from Remli Demo Primary Care): \"Ankle pumps, 10 reps, 3 times a day.\"",
         "Number of reminder times per day: 3",
         "3 times a day",
         "3 times daily"
       ],
-      "candidate": "Your record from Columbia Primary Care lists ankle pumps, 10 reps, 3 times a day.",
+      "candidate": "Your record from Remli Demo Primary Care lists ankle pumps, 10 reps, 3 times a day.",
       "expect": { "decision": "allowed" },
       "tags": ["therapy", "grounding"]
     },
@@ -166,14 +166,14 @@
       "facts": [
         "Kind: medication",
         "Name: Lisinopril",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: From your record",
-        "Instruction (verbatim from Columbia Primary Care): \"Take 1 tablet by mouth once daily.\"",
+        "Instruction (verbatim from Remli Demo Primary Care): \"Take 1 tablet by mouth once daily.\"",
         "Number of reminder times per day: 1",
         "1 times a day",
         "Reminder 1 of 1 - Morning: 8:00 AM [From your record]"
       ],
-      "candidate": "Your record from Columbia Primary Care lists lisinopril once daily. I can remind you at 8:00 AM. You can change that whenever you like. Nothing is set until you say so.",
+      "candidate": "Your record from Remli Demo Primary Care lists lisinopril once daily. I can remind you at 8:00 AM. You can change that whenever you like. Nothing is set until you say so.",
       "expect": { "decision": "allowed", "didTrim": true },
       "maxSentences": 3,
       "tags": ["length", "trimming"]
@@ -184,7 +184,7 @@
       "facts": [
         "Kind: medication",
         "Name: Lisinopril",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: From your record",
         "Number of reminder times per day: 1",
         "1 times a day",
@@ -201,7 +201,7 @@
       "facts": [
         "Kind: medication",
         "Name: Lisinopril",
-        "Source organization: Columbia Primary Care",
+        "Source organization: Remli Demo Primary Care",
         "Rule category: Pattern Remli noticed",
         "Pattern Remli noticed: I have not heard back about the 8:00 AM reminder several times",
         "Number of reminder times per day: 1",

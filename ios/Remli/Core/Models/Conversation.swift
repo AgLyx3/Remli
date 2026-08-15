@@ -14,8 +14,6 @@ struct TimelineEntry: Identifiable, Hashable {
         case proposal(ReminderProposal)
         /// Confirmation that a reminder is now scheduled.
         case scheduled(ApprovedReminder)
-        /// The medication-photo demo draft.
-        case photoDraft(PhotoDraft)
         /// A neutral system note, e.g. import finished.
         case note(String)
         /// Remli noticed a pattern and is asking about it. Never more than one at a time, and
@@ -50,24 +48,6 @@ enum NarrationSource: String, Codable, Hashable {
         case .deterministicTemplate: return "Scripted"
         case .staticCopy: return nil
         }
-    }
-}
-
-/// The medication-label photo affordance. Per the design doc this is a UI concept in v1: the
-/// camera opens, a clearly-labelled sample draft appears, and nothing is extracted from the image.
-struct PhotoDraft: Identifiable, Hashable {
-    let id: String
-    let medicationName: String
-    let instructionFound: String
-    let capturedAt: Date
-
-    static func demoDraft() -> PhotoDraft {
-        PhotoDraft(
-            id: UUID().uuidString,
-            medicationName: "Metformin 500 mg",
-            instructionFound: "Take 1 tablet by mouth twice daily with meals.",
-            capturedAt: Date()
-        )
     }
 }
 

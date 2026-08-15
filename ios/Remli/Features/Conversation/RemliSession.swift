@@ -444,17 +444,6 @@ final class RemliSession: ObservableObject {
         await send(action.prompt)
     }
 
-    func showPhotoDraft() {
-        append(.user(text: "I want to add a medication from a label photo.", wasSpoken: false))
-        append(.photoDraft(PhotoDraft.demoDraft()))
-        append(.assistant(
-            text: "This is a preview of how that will work. I am not reading your bottle in this "
-                + "version, so nothing here came from your photo and I will not create a reminder "
-                + "from it.",
-            narrationSource: .staticCopy
-        ))
-    }
-
     func speak(_ text: String) {
         playback.speak(text)
     }

@@ -29,7 +29,7 @@
         "gender": "female",
         "birthDate": "1971-04-18",
         "managingOrganization": {
-          "display": "Columbia Primary Care"
+          "display": "Remli Demo Primary Care"
         }
       }
     },
@@ -58,7 +58,7 @@
           "display": "Dr. Alma Whitfield"
         },
         "performer": {
-          "display": "Columbia Primary Care"
+          "display": "Remli Demo Primary Care"
         },
         "dosageInstruction": [
           {
@@ -127,7 +127,7 @@
         },
         "dateAsserted": "2026-06-02T15:05:00-04:00",
         "informationSource": {
-          "display": "Riverside Endocrinology"
+          "display": "Remli Demo Endocrinology"
         },
         "dosage": [
           {
@@ -169,7 +169,7 @@
           "display": "Dr. Alma Whitfield"
         },
         "performer": {
-          "display": "Columbia Primary Care"
+          "display": "Remli Demo Primary Care"
         },
         "dosageInstruction": [
           {
@@ -221,7 +221,7 @@
         },
         "authoredOn": "2026-06-18T14:30:00-04:00",
         "performer": {
-          "display": "Columbia Orthopedics"
+          "display": "Remli Demo Orthopedics"
         },
         "dosageInstruction": [
           {
@@ -270,7 +270,7 @@
           "start": "2026-06-20"
         },
         "author": {
-          "display": "Columbia Rehabilitation Medicine"
+          "display": "Remli Demo Rehabilitation"
         },
         "activity": [
           {
@@ -408,7 +408,7 @@
           },
           {
             "actor": {
-              "display": "Columbia Rehabilitation Medicine"
+              "display": "Remli Demo Rehabilitation"
             },
             "status": "accepted"
           }
@@ -427,7 +427,7 @@
         },
         "dateTime": "2026-05-14T09:25:00-04:00",
         "orderer": {
-          "display": "Columbia Primary Care"
+          "display": "Remli Demo Primary Care"
         },
         "oralDiet": {
           "type": [

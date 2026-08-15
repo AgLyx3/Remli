@@ -20,8 +20,7 @@ struct ConversationScreen: View {
                 text: $session.composerText,
                 isFocused: $isComposerFocused,
                 onSend: { text in Task { await session.send(text) } },
-                onQuickAction: { action in Task { await session.runQuickAction(action) } },
-                onAddFromPhoto: { session.showPhotoDraft() }
+                onQuickAction: { action in Task { await session.runQuickAction(action) } }
             )
         }
         .background(RemliTheme.Palette.background.ignoresSafeArea())
@@ -137,12 +136,21 @@ struct PrivacySheet: View {
                              + "never sent to a server to be summarised."
                     )
 
+                    ModelManagementSection(manager: provider.modelManager)
+
                     claim(
                         icon: "checkmark.shield",
                         title: "Nothing is scheduled without you",
                         detail: "Every reminder is reviewed and approved one at a time. Remli "
                               + "will not invent a dose, a time, or an instruction that is not in "
                               + "your record."
+                    )
+
+                    claim(
+                        icon: "cross.case",
+                        title: "Remli is not medical advice",
+                        detail: "Check with your doctor or pharmacist before starting, stopping, "
+                              + "or changing any medication, therapy, diet, or care plan."
                     )
 
                     if let failure = narrationError {
@@ -157,11 +165,13 @@ struct PrivacySheet: View {
                     if !provider.safetyEvents.isEmpty {
                         safetySection
                     }
+
+                    SupportSection()
                 }
                 .padding(RemliTheme.Metric.containerMargin)
             }
             .background(RemliTheme.Palette.background)
-            .navigationTitle("Privacy")
+            .navigationTitle("Privacy & Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -215,5 +225,136 @@ struct PrivacySheet: View {
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(RemliTheme.Palette.surface, in: RoundedRectangle(cornerRadius: 14))
+    }
+}
+
+private struct ModelManagementSection: View {
+    @ObservedObject var manager: GemmaModelManager
+    @State private var confirmDownload = false
+    @State private var confirmDelete = false
+    @State private var operationError: String?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RemliTheme.Metric.sm) {
+            Label("On-device model", systemImage: "cpu")
+                .font(RemliTheme.Typeface.bodyMedium().weight(.semibold))
+                .foregroundStyle(RemliTheme.Palette.onSurface)
+
+            Text(manager.availability.statusDescription)
+                .font(RemliTheme.Typeface.bodyMedium())
+                .foregroundStyle(RemliTheme.Palette.onSurfaceVariant)
+                .fixedSize(horizontal: false, vertical: true)
+
+            controls
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RemliTheme.Palette.surface, in: RoundedRectangle(cornerRadius: 14))
+        .confirmationDialog(
+            "Download Gemma?",
+            isPresented: $confirmDownload,
+            titleVisibility: .visible
+        ) {
+            Button("Download over Wi-Fi") { manager.startDownload() }
+        } message: {
+            Text("The model is about 2.58 GB. Remli downloads it over Wi-Fi and stores it only on this device.")
+        }
+        .confirmationDialog(
+            "Remove Gemma from this phone?",
+            isPresented: $confirmDelete,
+            titleVisibility: .visible
+        ) {
+            Button("Remove model", role: .destructive, action: removeModel)
+        } message: {
+            Text("Remli will use scripted narration until you download the model again.")
+        }
+        .alert(
+            "Could not remove model",
+            isPresented: Binding(
+                get: { operationError != nil },
+                set: { if !$0 { operationError = nil } }
+            )
+        ) {
+            Button("OK", role: .cancel) { operationError = nil }
+        } message: {
+            Text(operationError ?? "Unknown error")
+        }
+    }
+
+    @ViewBuilder
+    private var controls: some View {
+        switch manager.availability {
+        case .absent, .failed:
+            Button { confirmDownload = true } label: {
+                Label("Download 2.58 GB", systemImage: "arrow.down.circle")
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(RemliTheme.Palette.primary)
+
+        case .downloading(let progress):
+            if progress >= 0 {
+                ProgressView(value: progress)
+                    .tint(RemliTheme.Palette.primary)
+                    .accessibilityLabel("Model download progress")
+                    .accessibilityValue("\(Int(progress * 100)) percent")
+            } else {
+                ProgressView()
+                    .tint(RemliTheme.Palette.primary)
+                    .accessibilityLabel("Downloading model")
+            }
+
+            Button { manager.pauseDownload() } label: {
+                Label("Pause download", systemImage: "pause")
+            }
+            .buttonStyle(.bordered)
+
+        case .ready:
+            Button(role: .destructive) { confirmDelete = true } label: {
+                Label("Remove model", systemImage: "trash")
+            }
+            .buttonStyle(.bordered)
+        }
+    }
+
+    private func removeModel() {
+        do {
+            try manager.deleteModel()
+        } catch {
+            operationError = error.localizedDescription
+        }
+    }
+}
+
+private struct SupportSection: View {
+    private let supportURL = URL(string: "https://github.com/AgLyx3/Remli/issues")!
+
+    var body: some View {
+        Link(destination: supportURL) {
+            HStack(spacing: RemliTheme.Metric.sm) {
+                Image(systemName: "questionmark.circle")
+                    .font(.system(size: 15))
+                    .foregroundStyle(RemliTheme.Palette.primary)
+                    .frame(width: 22)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Contact support")
+                        .font(RemliTheme.Typeface.bodyMedium().weight(.medium))
+                        .foregroundStyle(RemliTheme.Palette.onSurface)
+                    Text("Report a problem or ask a question")
+                        .font(RemliTheme.Typeface.bodyMedium())
+                        .foregroundStyle(RemliTheme.Palette.onSurfaceVariant)
+                }
+
+                Spacer()
+
+                Image(systemName: "arrow.up.right")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(RemliTheme.Palette.primary)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(RemliTheme.Palette.surface, in: RoundedRectangle(cornerRadius: 14))
+        }
+        .buttonStyle(.plain)
     }
 }

@@ -75,7 +75,7 @@ final class NormalizerGoldenTests: XCTestCase {
         try await load(
             file: "synthea-glover.json",
             descriptorID: "sample.synthea.glover",
-            displayName: "Mount Auburn Hospital",
+            displayName: "Remli Demo Hospital",
             origin: .syntheaSynthetic
         )
     }
@@ -84,7 +84,7 @@ final class NormalizerGoldenTests: XCTestCase {
         try await load(
             file: "portal-export-demo.json",
             descriptorID: "sample.portal.export",
-            displayName: "Columbia Primary Care",
+            displayName: "Remli Demo Primary Care",
             origin: .authoredDemo
         )
     }
